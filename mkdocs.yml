@@ -1,13 +1,12 @@
-site_name: Python Introduction
+site_name: UPPMAX Workshop
 
 nav:
   - Start: index.md
-  - Uppmax Intro:
-      - Lecture: uppmax_intro/lecture.md
-      - Exercise: uppmax_intro/exercise.md
-  - Module System:
-      - Lecture: module_system/lecture.md
-      - Exercise: module_system/exercise.md
+  - Uppmax Intro: 
+    - UPPMAX: uppmax_intro/uppmax.md
+    - High-Performance Computing (HPC): uppmax_intro/hpc.md
+    - NAISS: uppmax_intro/naiss.md
+  - Module System: module_system/module_system.md
   - Python: python/python.md
   - SLURM: slurm/slurm.md
   - Tools:
