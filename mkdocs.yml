@@ -1,0 +1,68 @@
+site_name: Python Introduction
+
+nav:
+  - Start: index.md
+  - Uppmax Intro:
+      - Lecture: uppmax_intro/lecture.md
+      - Exercise: uppmax_intro/exercise.md
+  - Module System:
+      - Lecture: module_system/lecture.md
+      - Exercise: module_system/exercise.md
+  - Python: python/python.md
+  - SLURM: slurm/slurm.md
+  - Tools:
+      - VSCode: tools/vscode.md
+      - Jupyter: tools/jupyter.md
+
+theme:
+  name: material
+  greetings: Welcome to UPPMAX userguide
+  font:
+    # text: Lato
+    code: JetBrains Mono
+
+  logo: assets/logo.svg
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - content.code.annotate
+    - content.tabs.link
+
+  custom_dir: mkdocs_uppmax/
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - toc:
+      toc_depth: 3
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+  - admonition
+  - tables
+  - attr_list
+  - footnotes
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.keys
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
