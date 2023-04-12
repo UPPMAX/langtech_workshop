@@ -1,0 +1,827 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../login/">
+      
+      
+        <link rel="next" href="../module_system/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Workflow - UPPMAX Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#working-on-uppmax" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UPPMAX Workshop" class="md-header__button md-logo" aria-label="UPPMAX Workshop" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPPMAX Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Workflow
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Start
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../uppmax/" class="md-tabs__link md-tabs__link--active">
+        Uppmax Intro
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../python/load_and_run/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tools/jupyter/" class="md-tabs__link">
+        Development Tools
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UPPMAX Workshop" class="md-nav__button md-logo" aria-label="UPPMAX Workshop" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    UPPMAX Workshop
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Uppmax Intro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Uppmax Intro
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uppmax/" class="md-nav__link">
+        UPPMAX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hpc/" class="md-nav__link">
+        High-Performance Computing (HPC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../naiss/" class="md-nav__link">
+        NAISS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../login/" class="md-nav__link">
+        Login procedure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Workflow
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Workflow
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#home-dir-and-project-dir" class="md-nav__link">
+    $HOME dir and project dir
+  </a>
+  
+    <nav class="md-nav" aria-label="$HOME dir and project dir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota" class="md-nav__link">
+    Quota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-hours" class="md-nav__link">
+    Core hours
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-kind-of-work-will-you-perform" class="md-nav__link">
+    What kind of work will you perform?
+  </a>
+  
+    <nav class="md-nav" aria-label="What kind of work will you perform?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uppmax-cluster-overview-again" class="md-nav__link">
+    UPPMAX Cluster overview again!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    Common problems
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_system/" class="md-nav__link">
+        Module System (LMOD)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm/" class="md-nav__link">
+        SLURM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/load_and_run/" class="md-nav__link">
+        Load and run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/packages/" class="md-nav__link">
+        Packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        Virtual Environments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/gpu/" class="md-nav__link">
+        GPU example
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Development Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/jupyter/" class="md-nav__link">
+        Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/vscode/" class="md-nav__link">
+        VSCode
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#home-dir-and-project-dir" class="md-nav__link">
+    $HOME dir and project dir
+  </a>
+  
+    <nav class="md-nav" aria-label="$HOME dir and project dir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quota" class="md-nav__link">
+    Quota
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-hours" class="md-nav__link">
+    Core hours
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-kind-of-work-will-you-perform" class="md-nav__link">
+    What kind of work will you perform?
+  </a>
+  
+    <nav class="md-nav" aria-label="What kind of work will you perform?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uppmax-cluster-overview-again" class="md-nav__link">
+    UPPMAX Cluster overview again!
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    Common problems
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="working-on-uppmax">Working on UPPMAX<a class="headerlink" href="#working-on-uppmax" title="Anchor link to this section for reference">&para;</a></h1>
+<h2 id="home-dir-and-project-dir"><code>$HOME</code> dir and project dir<a class="headerlink" href="#home-dir-and-project-dir" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="quota">Quota<a class="headerlink" href="#quota" title="Anchor link to this section for reference">&para;</a></h3>
+<ul>
+<li>Disk usage and number of files</li>
+<li><code>$HOME</code> has always 32 GB and 300,000 files</li>
+<li>You typically have one project per project, their size dependent on type of project</li>
+<li>Compute projects both have disk space (128 GB) and computing time attached to them</li>
+</ul>
+<h3 id="core-hours">Core hours<a class="headerlink" href="#core-hours" title="Anchor link to this section for reference">&para;</a></h3>
+<ul>
+<li>You  get core hours only from compute project</li>
+<li>When they are used you can still get "BONUS" jobs if the resources allow.</li>
+</ul>
+<h2 id="what-kind-of-work-will-you-perform">What kind of work will you perform?<a class="headerlink" href="#what-kind-of-work-will-you-perform" title="Anchor link to this section for reference">&para;</a></h2>
+<div class="puml"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="548px" preserveAspectRatio="true" style="background: #ffffff" version="1.1" viewBox="0 0 729 548" width="729px" zoomAndPan="magnify"><defs/><g><ellipse cx="400.125" cy="20" fill="#222222" rx="10" ry="10" style="stroke:#222222;stroke-width:1.0;"/><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="49" x="375.625" y="50"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="29" x="385.625" y="71.1387">login</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="142" x="329.125" y="103.9688"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="122" x="339.125" y="125.1074">Rackham login Node</text><polygon fill="#F1F1F1" points="309.625,157.9375,490.625,157.9375,502.625,169.9375,490.625,181.9375,309.625,181.9375,297.625,169.9375,309.625,157.9375" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="309.625" y="173.7456">Do CPU/memory intensive work</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="276.625" y="167.3433">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="502.625" y="167.3433">no</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="146" x="154.25" y="191.9375"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="126" x="164.25" y="213.0762">Use calculation node</text><polygon fill="#F1F1F1" points="171.75,259.875,282.75,259.875,294.75,271.875,282.75,283.875,171.75,283.875,159.75,271.875,171.75,259.875" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="111" x="171.75" y="275.6831">Do interactive work</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="138.75" y="269.2808">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="294.75" y="269.2808">no</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="229" x="11" y="293.875"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="209" x="21" y="315.0137">$ interactive -A &lt;proj&gt; &lt;options&gt;</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="260" y="293.875"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="118" x="270" y="315.0137">Make a batch script</text><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="130" x="264" y="347.8438"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="110" x="274" y="368.9824">$ sbatch &lt;script&gt;</text><polygon fill="#F1F1F1" points="227.25,387.8125,239.25,399.8125,227.25,411.8125,215.25,399.8125,227.25,387.8125" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#F1F1F1" height="47.9375" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="290" x="428" y="191.9375"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="270" x="438" y="213.0762">Stay on login node and laod your module(s):</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="187" x="438" y="227.0449">$module load &lt;software/tool&gt;</text><rect fill="#F1F1F1" height="47.9375" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="255" x="445.5" y="273.8438"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52" x="455.5" y="294.9824">Run tool:</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="235" x="455.5" y="308.9512">$&lt;toolname&gt; [- options, input, output]</text><polygon fill="#F1F1F1" points="400.125,417.8125,412.125,429.8125,400.125,441.8125,388.125,429.8125,400.125,417.8125" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#F1F1F1" height="33.9688" rx="12.5" ry="12.5" style="stroke:#181818;stroke-width:0.5;" width="51" x="374.625" y="461.8125"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="384.625" y="482.9512">finish</text><ellipse cx="400.125" cy="526.7813" fill="none" rx="11" ry="11" style="stroke:#222222;stroke-width:1.0;"/><ellipse cx="400.125" cy="526.7813" fill="#222222" rx="6" ry="6" style="stroke:#111111;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="400.125" x2="400.125" y1="30" y2="50"/><polygon fill="#181818" points="396.125,40,400.125,50,404.125,40,400.125,44" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="400.125" x2="400.125" y1="83.9688" y2="103.9688"/><polygon fill="#181818" points="396.125,93.9688,400.125,103.9688,404.125,93.9688,400.125,97.9688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="329" x2="329" y1="327.8438" y2="347.8438"/><polygon fill="#181818" points="325,337.8438,329,347.8438,333,337.8438,329,341.8438" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="159.75" x2="125.5" y1="271.875" y2="271.875"/><line style="stroke:#181818;stroke-width:1.0;" x1="125.5" x2="125.5" y1="271.875" y2="293.875"/><polygon fill="#181818" points="121.5,283.875,125.5,293.875,129.5,283.875,125.5,287.875" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="294.75" x2="329" y1="271.875" y2="271.875"/><line style="stroke:#181818;stroke-width:1.0;" x1="329" x2="329" y1="271.875" y2="293.875"/><polygon fill="#181818" points="325,283.875,329,293.875,333,283.875,329,287.875" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="125.5" x2="125.5" y1="327.8438" y2="399.8125"/><line style="stroke:#181818;stroke-width:1.0;" x1="125.5" x2="215.25" y1="399.8125" y2="399.8125"/><polygon fill="#181818" points="205.25,395.8125,215.25,399.8125,205.25,403.8125,209.25,399.8125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="329" x2="329" y1="381.8125" y2="399.8125"/><line style="stroke:#181818;stroke-width:1.0;" x1="329" x2="239.25" y1="399.8125" y2="399.8125"/><polygon fill="#181818" points="249.25,395.8125,239.25,399.8125,249.25,403.8125,245.25,399.8125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="227.25" x2="227.25" y1="225.9063" y2="259.875"/><polygon fill="#181818" points="223.25,249.875,227.25,259.875,231.25,249.875,227.25,253.875" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="573" x2="573" y1="239.875" y2="273.8438"/><polygon fill="#181818" points="569,263.8438,573,273.8438,577,263.8438,573,267.8438" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="297.625" x2="227.25" y1="169.9375" y2="169.9375"/><line style="stroke:#181818;stroke-width:1.0;" x1="227.25" x2="227.25" y1="169.9375" y2="191.9375"/><polygon fill="#181818" points="223.25,181.9375,227.25,191.9375,231.25,181.9375,227.25,185.9375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="502.625" x2="573" y1="169.9375" y2="169.9375"/><line style="stroke:#181818;stroke-width:1.0;" x1="573" x2="573" y1="169.9375" y2="191.9375"/><polygon fill="#181818" points="569,181.9375,573,191.9375,577,181.9375,573,185.9375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="227.25" x2="227.25" y1="411.8125" y2="429.8125"/><line style="stroke:#181818;stroke-width:1.0;" x1="227.25" x2="388.125" y1="429.8125" y2="429.8125"/><polygon fill="#181818" points="378.125,425.8125,388.125,429.8125,378.125,433.8125,382.125,429.8125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="573" x2="573" y1="321.7813" y2="429.8125"/><line style="stroke:#181818;stroke-width:1.0;" x1="573" x2="412.125" y1="429.8125" y2="429.8125"/><polygon fill="#181818" points="422.125,425.8125,412.125,429.8125,422.125,433.8125,418.125,429.8125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="400.125" x2="400.125" y1="137.9375" y2="157.9375"/><polygon fill="#181818" points="396.125,147.9375,400.125,157.9375,404.125,147.9375,400.125,151.9375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="400.125" x2="400.125" y1="441.8125" y2="461.8125"/><polygon fill="#181818" points="396.125,451.8125,400.125,461.8125,404.125,451.8125,400.125,455.8125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="400.125" x2="400.125" y1="495.7813" y2="515.7813"/><polygon fill="#181818" points="396.125,505.7813,400.125,515.7813,404.125,505.7813,400.125,509.7813" style="stroke:#181818;stroke-width:1.0;"/></g></svg></div>
+
+<h3 id="uppmax-cluster-overview-again">UPPMAX Cluster overview again!<a class="headerlink" href="#uppmax-cluster-overview-again" title="Anchor link to this section for reference">&para;</a></h3>
+<pre class="mermaid"><code>
+graph TB
+
+  Node1 -- interactive --&gt; SubGraph2Flow
+  Node1 -- sbatch --&gt; SubGraph2Flow
+  subgraph "Snowy"
+  SubGraph2Flow(calculation nodes) 
+        end
+
+        thinlinc -- usr-sensXXX + 2FA----&gt; SubGraph1Flow
+        Node1 -- usr-sensXXX + 2FA----&gt; SubGraph1Flow
+        subgraph "Bianca"
+        SubGraph1Flow(Bianca login) -- usr+passwd --&gt; private(private cluster)
+        private -- interactive --&gt; calcB(calculation nodes)
+        private -- sbatch --&gt; calcB
+        end
+
+        subgraph "Rackham"
+        Node1[Login] -- interactive --&gt; Node2[calculation nodes]
+        Node1 -- sbatch --&gt; Node2
+        end</code></pre>
+<div class="admonition tip">
+<p class="admonition-title">Keypoints</p>
+<ul>
+<li>Use your disk spaces wisely<ul>
+<li>home folder just for general stuff and files needed by several projects</li>
+<li>always read and write protected for others by default</li>
+<li>otherside project folder which will more easily become public for other's</li>
+<li>by default available for all project members.</li>
+</ul>
+</li>
+<li>Use the computing resources wisely<ul>
+<li>low intensity work on login node</li>
+<li>high intensity work on compute nodes (core hours are counted)<ul>
+<li>for development use the interactive sessions</li>
+<li>otherwise make batch jobs!</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="common-problems">Common problems<a class="headerlink" href="#common-problems" title="Anchor link to this section for reference">&para;</a></h2>
+<ul>
+<li>Conda environment clash with loaded python modules</li>
+<li>Forgotten environment variables defined in your <code>.bashrc</code> may give unexeptected errors when you run other programs or new versions of a program</li>
+<li>A full <code>$HOME</code> folder may cause unexpected errors</li>
+<li>check with <code>uquota</code></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Exercise 1: Transfering files (10 min)</p>
+<ol>
+<li>Login to rackham and start by creating a personal directory under the
+   project storage: <code>/proj/uppmax2020-2-2/{your-username}</code></li>
+<li>Next create an empty text file on local computer. E.g. <code>touch
+   my_file.txt</code></li>
+<li>Transfer the file to the directory you created in step 1 <code>scp</code>, <code>rsync</code>
+   or a graphical interface.</li>
+<li>From <code>rackham</code>, now open <code>my_file.txt</code>, add some arbitrary text using
+   e.g. <code>vim, nano</code> or <code>emacs</code> and then transfer it back to your local
+   computer.    </li>
+</ol>
+<p><strong>Hint:</strong> For more information about transfering files see:
+<a href="https://www.uppmax.uu.se/support/faq/login-problems-faq/moving-files-between-uppmax-and-local-computer/">https://www.uppmax.uu.se/support/faq/login-problems-faq/moving-files-between-uppmax-and-local-computer/</a></p>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

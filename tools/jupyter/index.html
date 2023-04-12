@@ -1,0 +1,773 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../python/gpu/">
+      
+      
+        <link rel="next" href="../vscode/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.6">
+    
+    
+      
+        <title>Jupyter - UPPMAX Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#running-jupyter-on-snowy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UPPMAX Workshop" class="md-header__button md-logo" aria-label="UPPMAX Workshop" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UPPMAX Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Jupyter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Start
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../uppmax_intro/uppmax/" class="md-tabs__link">
+        Uppmax Intro
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../python/load_and_run/" class="md-tabs__link">
+        Python
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Development Tools
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UPPMAX Workshop" class="md-nav__button md-logo" aria-label="UPPMAX Workshop" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    UPPMAX Workshop
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Start
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Uppmax Intro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Uppmax Intro
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uppmax_intro/uppmax/" class="md-nav__link">
+        UPPMAX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uppmax_intro/hpc/" class="md-nav__link">
+        High-Performance Computing (HPC)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uppmax_intro/naiss/" class="md-nav__link">
+        NAISS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uppmax_intro/login/" class="md-nav__link">
+        Login procedure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uppmax_intro/work/" class="md-nav__link">
+        Workflow
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uppmax_intro/module_system/" class="md-nav__link">
+        Module System (LMOD)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../uppmax_intro/slurm/" class="md-nav__link">
+        SLURM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/load_and_run/" class="md-nav__link">
+        Load and run
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/packages/" class="md-nav__link">
+        Packages
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/venv/" class="md-nav__link">
+        Virtual Environments
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/gpu/" class="md-nav__link">
+        GPU example
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Development Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Jupyter
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Jupyter
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-connect-to-rackham-using-thinlinc" class="md-nav__link">
+    1. Connect to Rackham using ThinLinc.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-open-a-terminal-in-thinlinc-and-ask-for-an-interactive-session-to-snowy" class="md-nav__link">
+    2. Open a terminal in ThinLinc and ask for an interactive session to Snowy.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-load-the-needed-modules" class="md-nav__link">
+    3. Load the needed modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-open-the-notebook" class="md-nav__link">
+    4. Open the notebook.
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Open the notebook.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-1" class="md-nav__link">
+    Solution 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-2" class="md-nav__link">
+    Solution 2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscode/" class="md-nav__link">
+        VSCode
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-connect-to-rackham-using-thinlinc" class="md-nav__link">
+    1. Connect to Rackham using ThinLinc.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-open-a-terminal-in-thinlinc-and-ask-for-an-interactive-session-to-snowy" class="md-nav__link">
+    2. Open a terminal in ThinLinc and ask for an interactive session to Snowy.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-load-the-needed-modules" class="md-nav__link">
+    3. Load the needed modules
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-open-the-notebook" class="md-nav__link">
+    4. Open the notebook.
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Open the notebook.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#solution-1" class="md-nav__link">
+    Solution 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solution-2" class="md-nav__link">
+    Solution 2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="running-jupyter-on-snowy">Running Jupyter on Snowy<a class="headerlink" href="#running-jupyter-on-snowy" title="Anchor link to this section for reference">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li>You can run Python in <code>jupyter-notebook</code> or <code>jupyter-lab</code>, which provide a web interface with possibility of inline figures and debugging.</li>
+<li><code>jupyter-lab</code> is installed in the <code>python</code> modules <code>&gt;=3.10.8</code>.</li>
+<li>You may also install your own version of <code>jupyter-notebook</code> or <code>jupyter-lab</code> if you have certain version requirements.</li>
+</ul>
+</div>
+<h2 id="1-connect-to-rackham-using-thinlinc">1. Connect to Rackham using ThinLinc.<a class="headerlink" href="#1-connect-to-rackham-using-thinlinc" title="Anchor link to this section for reference">&para;</a></h2>
+<p>You may download the ThinLinc client from here:
+<a href="https://www.cendio.com/thinlinc/download">https://www.cendio.com/thinlinc/download</a></p>
+<p>You may also use the web browser to connect:
+<a href="https://rackham-gui.uppmax.uu.se">https://rackham-gui.uppmax.uu.se</a>
+You need to set up 2FA for the ThinLinc web.</p>
+<h2 id="2-open-a-terminal-in-thinlinc-and-ask-for-an-interactive-session-to-snowy">2. Open a terminal in ThinLinc and ask for an interactive session to Snowy.<a class="headerlink" href="#2-open-a-terminal-in-thinlinc-and-ask-for-an-interactive-session-to-snowy" title="Anchor link to this section for reference">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>salloc<span class="w"> </span>-A<span class="w"> </span>naiss2023-22-247<span class="w"> </span>-p<span class="w"> </span>node<span class="w"> </span>-N<span class="w"> </span><span class="m">1</span><span class="w"> </span>-M<span class="w"> </span>snowy<span class="w"> </span>--gpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>--gpus-per-node<span class="o">=</span><span class="m">1</span><span class="w"> </span>-t<span class="w"> </span><span class="m">04</span>:00:00
+</code></pre></div>
+<p>Note: We have a magnetic 4-node reservation for today: <code>naiss2023-22-247_1</code>.</p>
+<p>Is the GPU visible?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$CUDA_VISIBLE_DEVICES</span>
+</code></pre></div></p>
+<h2 id="3-load-the-needed-modules">3. Load the needed modules<a class="headerlink" href="#3-load-the-needed-modules" title="Anchor link to this section for reference">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>module<span class="w"> </span>load<span class="w"> </span>python_ML_packages/3.9.5-gpu
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>pip<span class="w"> </span>list
+</code></pre></div>
+<p>And start the Jupyter notebook:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>jupyter-notebook<span class="w"> </span>--ip<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--no-browser
+</code></pre></div></p>
+<h2 id="4-open-the-notebook">4. Open the notebook.<a class="headerlink" href="#4-open-the-notebook" title="Anchor link to this section for reference">&para;</a></h2>
+<h3 id="solution-1">Solution 1:<a class="headerlink" href="#solution-1" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Click on any of the links.
+This will open a Jupyter notebook in a Firefox browser on Rackham.</p>
+<h3 id="solution-2">Solution 2:<a class="headerlink" href="#solution-2" title="Anchor link to this section for reference">&para;</a></h3>
+<p>Instead of opening Jupyter in a browser in ThinLinc, you may use the browser on your computer.
+You need to use ssh-tunnelling for this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ssh<span class="w"> </span>-L<span class="w"> </span><span class="m">8000</span>:s175:8888<span class="w"> </span>iusan@rackham.uppmax.uu.se
+</code></pre></div>
+<p>If you cannot open the notebook using the links above, try changing it to:
+<code>localhost:&lt;port&gt;/?token&lt;tokenID&gt;</code>
+Example: <code>localhost:8000/?token=ab8a98df7b6606316849015daebaca5d2fa6331d32a47446</code></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.suggest", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
