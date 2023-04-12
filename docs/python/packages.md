@@ -42,3 +42,11 @@ $ pip list -v
 To see which Python packages you, yourself, has installed, you can use `pip
 list --user` while the environement you have installed the packages in are
 active.
+
+!!! info "ML_packages"
+
+    We also have some preinstalled machine learning libraries.
+
+    ```
+    module load python_ML_packages
+    ```

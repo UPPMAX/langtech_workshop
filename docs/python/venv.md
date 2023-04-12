@@ -103,7 +103,7 @@ pip install numpy==1.15.4 matplotlib==2.2.2
     REMEMBER TO USE 'conda clean -a' once in a while
     ```
 
-2. First time
+2. If using conda for the first time
     * The variable CONDA_ENVS_PATH contains the location of your environments.
     Set it to your project's environments folder if you have one.
     * Otherwise, the default is ~/.conda/envs. 
@@ -119,3 +119,61 @@ pip install numpy==1.15.4 matplotlib==2.2.2
     Run ``source conda_init.sh`` to initialise your shell (bash) to be able
     Oto run ``conda activate`` and ``conda deactivate`` etcetera instead of
     ``source activate``. It will modify (append) your ``.bashrc`` file.
+
+!!! info "Conda cheat sheet"
+    - List packages in present environment:	``conda list``
+    - List all environments:			``conda info -e`` ot ``conda env list``
+    - Install a package: ``conda install somepackage``
+    - Install from certain channel (conda-forge): ``conda install -c conda-forge somepackage``
+    - Install a specific version: ``conda install somepackage=1.2.3``
+    - Create a new environment: ``conda create --name myenvironment``
+    - Create a new environment from requirements.txt: ``conda create --name myenvironment --file requirements.txt``
+    - On e.g. HPC systems where you don’t have write access to central installation directory: conda create --prefix /some/path/to/env``
+    - Activate a specific environment: ``conda activate myenvironment``
+    - Deactivate current environment: ``conda deactivate``
+
+3. Create the conda environment
+
+    - Example:
+    ```
+    conda create --name python36-env python=3.6 numpy=1.13.1 matplotlib=2.2.2
+    ```
+
+    
+    - Alternative: ``mamba`` is a fast drop-in alternative to conda, using
+    "libsolv" for dependency resolution. It is available from the ``conda``
+    module.
+    ```
+    mamba create --name python37-env python=3.7 numpy=1.13.1 matplotlib=2.2.2
+    ```
+
+4. Activate the conda environment by:
+    ```
+	source activate python36-env
+    ```
+    - You will see that your prompt is changing to start with
+      ``(python-36-env)`` to show that you are within an environment.
+    
+5. Now do your work!
+
+6. Deactivate
+    ```
+    conda deactivate
+    ```
+
+!!! warning
+    - Conda is known to create **many** *small* files. Your diskspace is not only limited in GB, but also in number of files (typically ``300000`` in $home). 
+    - Check your disk usage and quota limit with ``uquota``
+    - Do a ``conda clean -a`` once in a while to remove unused and unnecessary files
+    
+    
+!!! tip "Exercise 2: Create your own environment (10 min)"
+    
+    1. Create a virtual environment using either `venv` or `conda`. Make sure
+       it's installed under `/proj/uppmax2020-2-2`
+    2. Install some language technology (Python) software. 
+    3. Did it work? If not what problem did you run into?
+
+- More info about Conda on UPPMAX
+  <https://uppmax.uu.se/support/user-guides/conda-user-guide/>
+
