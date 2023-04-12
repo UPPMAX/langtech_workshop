@@ -25,120 +25,130 @@
     - The jobs are too long to fit in core number 9-13.
 - Right: A 5-core job has to wait.
     - Too long to fit in cores 9-13 and too wide to fit in the last cores.
+How to submit a job to Slurm?
 
-## Jobs
-- Job = what happens during booked time
-- Described in a Bash script file
-  - Slurm parameters (**flags**)
-  - Load software modules
-  - (Move around file system)
-  - Run programs
-  - (Collect output)
-- ... and more
-
-## Slurm parameters
-- 1 mandatory setting for jobs:
-  - Which compute project? (`-A`)
-- 3 settings you really should set:
-  - Type of queue? (`-p`)
-    - core, node, (for short development jobs and tests: devcore, devel)
-  - How many cores? (`-n`)
-    - up to 16 (20 on Rackham) for core job
-  - How long at most? (`-t`)
-- If in doubt:
-  - -`p core`
-  - -`n 1`
-  - `-t 7-00:00:00`
-
-![Image](../img/queue1.png)
-
-- Where should it run? (`-p node` or `-p core`)
-- Use a whole node or just part of it?
-  - 1 node = 20 cores (16 on Bianca & Snowy)
-  - 1 hour walltime = 20 core hours = expensive
-   -Waste of resources unless you have a parallel program or need all the memory, e.g. 128 GB per node
-- Default value: core
-
-## Interactive jobs
-- Most work is most effective as submitted jobs, but e.g. development needs responsiveness
-- Interactive jobs are high-priority but limited in `-n` and `-t`
-- Quickly give you a job and logs you in to the compute node
-- Require same Slurm parameters as other jobs
-
-``````{challenge} Try interactive
-
-```bash=
-  interactive -A naiss2023-22-21 -p core -n 1 -t 10:00
-```
-- Which node are you on?
-  - Logout with `<Ctrl>-D` or `logout`
-``````
-
-
-
- 
-### A simple job script template
-
-```bash=
-#!/bin/bash -l 
-# tell it is bash language and -l is for starting a session with a "clean environment, e.g. with no modules loaded and paths reset"
-
-#SBATCH -A naiss2023-22-21  # Project name
-
-#SBATCH -p devcore  # Asking for cores (for test jobs and as opposed to multiple nodes) 
-
-#SBATCH -n 1  # Number of cores
-
-#SBATCH -t 00:10:00  # Ten minutes
-
-#SBATCH -J Template_script  # Name of the job
-
-# go to some directory
-
-cd /proj/introtouppmax/labs
-pwd -P
-
-# load software modules
-
-module load bioinfo-tools
-module list
-
-# do something
-
-echo Hello world!  
-
+```bash
+sbatch  -A naiss2023-22-247 -t 10:00  -p core  -n 10  my_job.sh
 ```
 
-## Other Slurm tools
+What should a jobscript contain?
+  
+- project number
+- max time
+- partition
+- number or core and/or nodes
+- job name
+- special features
+  
+### A typical job script:
 
-- Squeue — quick info about jobs in queue
-- Jobinfo — detailed info about jobs
-- Finishedjobinfo — summary of finished jobs
-- Jobstats — efficiency of booked resources
+```bash
+#!/bin/bash
+#SBATCH -A naiss2023-22-247
+#SBATCH -p node
+#SBATCH -N 1
+#SBATCH -t 24:00:00
 
-``````{challenge} Exercise at home
-- Copy the code just further up!
-- Put it into a file named “jobtemplate.sh”
-- Make the file executable (chmod)
-- Submit the job:
+module load software/version
+
+./my-script.sh
 ```
-$ sbatch jobtemplate.sh
+
+Useful SBATCH options:
+
+- `--mail-type=BEGIN,END,FAIL,TIME_LIMIT_80`
+- `--output=slurm-%j.out`
+- `--error=slurm-%j.err `
+
+
+Useful commands:
+
+- `jobinfo -p devel`
+- `sinfo -p node - M snowy`
+- `jobinfo -u username --state=running`
+- `jobinfo -u username --state=pending`
+- `salloc -A naiss2023-22-247 --begin=2023-03-24T08:00:00` starts an interactive job earliest tomorrow at 08:00
+
+### How to cancel jobs?
+- `scancel <jobid>`
+
+## Job dependencies
+- `sbatch jobscript.sh`   submitted job with jobid1
+- `sbatch anotherjobscript.sh`  submitted job with jobid2
+- `--dependency=afterok:jobid1:jobid2` job will only start running after the successful end of jobs jobid1:jobid2
+- very handy for clearly defined workflows
+- One may also use `--dependency=afternotok:jobid` in case you’d like to resubmit a failed job, OOM for example, to a node with a higher memory: `-C mem215GB` or `-C mem1TB`
+
+
+## GPU flags
+
+```bash
+#SBATCH -M snowy
+#SBATCH --gres=gpu:1
+#SBATCH --gpus-per-node=1
 ```
-- Note the job id!
-- Check the queue:
-```
-$ squeue -u <username>
-$ jobinfo -u <username>
-```
-- When it’s done (rather fast), look for the output file (slurm-<jobid>.out):
-```
-$ ls -lrt slurm-*
-```
-- Check the output file to see if it ran correctly
-```
-$ cat <filename>
-```
-``````
+
+!!! Example of a job running on part of a GPU node
+    ```bash
+    #!/bin/bash
+    #SBATCH -J GPUjob
+    #SBATCH -A snic2023-22-247
+    #SBATCH -t 03-00:00:00
+    #SBATCH -p core
+    #SBATCH -n 16
+    #SBATCH -M snowy
+    #SBATCH --gres=gpu:1
+    #SBATCH --gpus-per-node=1
+
+    module use /sw/EasyBuild/snowy/modules/all/
+    module load intelcuda/2019b
+    ```
+
+## I/O intensive jobs: use the scratch local to the node
+
+!!! Example
+    ```bash
+    #!/bin/bash
+    #SBATCH -J jobname
+    #SBATCH -A naiss2023-22-247
+    #SBATCH -p core
+    #SBATCH -n 1
+    #SBATCH -t 10:00:00
+
+    module load bioinfo-tools
+    module load bwa/0.7.17 samtools/1.14
+
+    export SRCDIR=$HOME/path-to-input
+
+    cp $SRCDIR/foo.pl $SRCDIR/bar.txt $SNIC_TMP/.
+    cd $SNIC_TMP
+
+    ./foo.pl bar.txt
+
+    cp *.out $SRCDIR/path-to-output/.
+    ```
+
+
+## Profiling on the GPUs
+- `nvidia-smi`
+
+    - `nvidia-smi dmon -o DT`
+    - `nvidia-smi --format=noheader,csv --query-compute-apps=timestamp,gpu_name,pid,name,used_memory --loop=1 -f sample_run.log`
+    - `nvidia-smi --help` or `man nvidia-smi`
+
+- `module load nvtop`
+
+    - `nvtop`
+
+
+## Additional information
+
+- [UPPMAX webpage](https://www.uppmax.uu.se/)
+- [Slurm](https://www.uppmax.uu.se/support/user-guides/slurm-user-guide/)
+- [Snowy](https://www.uppmax.uu.se/support/user-guides/snowy-user-guide/)
+- [GPU:s on Snowy](https://www.uppmax.uu.se/support/user-guides/using-the-gpu-nodes-on-snowy/)
+- [TensorFlow on Snowy/Bianca](https://www.uppmax.uu.se/support/user-guides/tensorflow-user-guide/)
+
  
 !!! info "Keypoints"
     - You are always in the login node unless you:
