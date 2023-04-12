@@ -16,7 +16,12 @@ template: home.html
 <!-- course](https://www.uppmax.uu.se/support/courses-and-workshops/introductory-course-winter-2023/) -->
 <!-- and introduces the foundations of the [`Python`](https://www.python.org/) programming language. -->
 
-<br/><br/>
+|Topic|Time|Content|
+|-----|-----|-------|
+|Intro to UPPMAX|13.15-14:00|Uppmax, NAISS, login, navigation, modules, SLURM|
+|Python|14.15-15:00|Packages, Virutal environments, GPU code|
+|Dev tools|15:15-16:00|Jupyter notebooks, VSCode|
+|UPPMAX Tour|16:00-16:15|Visit of the serverhall with Jerker
 
 [Get started!](uppmax_intro/hpc/){ .md-button .md-button--primary }
 
