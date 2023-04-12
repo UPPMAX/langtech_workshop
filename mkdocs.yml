@@ -6,12 +6,18 @@ nav:
     - UPPMAX: uppmax_intro/uppmax.md
     - High-Performance Computing (HPC): uppmax_intro/hpc.md
     - NAISS: uppmax_intro/naiss.md
-  - Module System: module_system/module_system.md
-  - Python: python/python.md
-  - SLURM: slurm/slurm.md
-  - Tools:
-      - VSCode: tools/vscode.md
+    - Login procedure: uppmax_intro/login.md
+    - Workflow: uppmax_intro/work.md
+    - Module System (LMOD): uppmax_intro/module_system.md
+    - SLURM: uppmax_intro/slurm.md
+  - Python: 
+    - Load and run: python/load_and_run.md
+    - Packages: python/packages.md
+    - Virtual Environments: python/venv.md
+    - GPU example: python/gpu.md
+  - Development Tools:
       - Jupyter: tools/jupyter.md
+      - VSCode: tools/vscode.md
 
 theme:
   name: material
@@ -65,3 +71,8 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+   - plantuml:
+        puml_url: https://www.plantuml.com/plantuml/
+        num_workers: 8

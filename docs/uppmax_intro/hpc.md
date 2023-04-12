@@ -1,8 +1,3 @@
-!!! question "Questions"
-    - What is UPPMAX? 
-    - What is SNIC/NAISS? 
-    - What is a computer cluster?
-
 ## HPC, HTC and MTC
 
 - The Buzz word is **HPC or High Performance Computing**, but this is rather

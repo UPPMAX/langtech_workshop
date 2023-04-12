@@ -1,3 +1,8 @@
+!!! question "Questions"
+    - What is UPPMAX? 
+    - What is SNIC/NAISS? 
+    - What is a computer cluster?
+
 **UPPMAX = UppMACS**
 - [Uppsala Multidisciplinary Center for Advanced Computational Science](http://uppmax.uu.se)
 
