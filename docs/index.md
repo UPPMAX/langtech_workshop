@@ -23,7 +23,7 @@ template: home.html
 |Dev tools|15:15-16:00|Jupyter notebooks, VSCode|
 |UPPMAX Tour|16:00-16:15|Visit of the serverhall with Jerker
 
-[Get started!](uppmax_intro/hpc/){ .md-button .md-button--primary }
+[Get started!](uppmax_intro/uppmax/){ .md-button .md-button--primary }
 
 <br/><br/>
 
